@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4334802734176002}
   - component: {fileID: 212121716056221582}
-  - component: {fileID: 114082249920556792}
   - component: {fileID: 65194371160245126}
+  - component: {fileID: 114964645618019640}
   m_Layer: 0
   m_Name: PrefabCard
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 3.56, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114082249920556792
+--- !u!114 &114964645618019640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,9 +62,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1623375330745614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100a12af089e19845beeba3dc7d93c78, type: 3}
+  m_Script: {fileID: 11500000, guid: a5feba2b62c3d4c9a8a972fd3a0dc5bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  suit: 
+  rank: 0
+  color: {r: 0, g: 0, b: 0, a: 1}
+  colS: Black
+  decoGOs: []
+  pipGOs: []
+  back: {fileID: 0}
+  def:
+    face: 
+    rank: 0
+    pips: []
+  state: 0
+  hiddenBy: []
+  layoutID: 0
+  slotDef:
+    x: 0
+    y: 0
+    faceUp: 0
+    layerName: Default
+    layerID: 0
+    id: 0
+    hiddenBy: 
+    type: slot
+    stagger: {x: 0, y: 0}
 --- !u!212 &212121716056221582
 SpriteRenderer:
   m_ObjectHideFlags: 1
