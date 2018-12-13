@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Deck : MonoBehaviour {
 
-    /*
     [Header("Set in Inspector")]
 	//Suits
 	public Sprite suitClub;
@@ -24,7 +23,6 @@ public class Deck : MonoBehaviour {
 	// Prefabs
 	public GameObject prefabSprite;
 	public GameObject prefabCard;
-    */
 
 	[Header("Set Dynamically")]
 	public PT_XMLReader					xmlr;
