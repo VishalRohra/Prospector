@@ -2,22 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Card : MonoBehaviour {
+public class Card : MonoBehaviour
+{
+    [Header("Set Dynamically")]
+    public string suit;
+    public int rank;
+    public Color color = Color.black;
+    public string colS = "Black";  // or "Red"
 
-    /*
-	public string    suit;
-	public int       rank;
-	public Color     color = Color.black;
-	public string    colS = "Black";  // or "Red"
-	
-	public List<GameObject> decoGOs = new List<GameObject>();
-	public List<GameObject> pipGOs = new List<GameObject>();
-	
-	public GameObject back;  // back of card;
-	public CardDefinition def;  // from DeckXML.xml		
+    public List<GameObject> decoGOs = new List<GameObject>();
+    public List<GameObject> pipGOs = new List<GameObject>();
 
+    public GameObject back;  // back of card;
+    public CardDefinition def;  // from DeckXML.xml	
 
-	public bool faceUp {
+    public bool faceUp
+    {
+        get
+        {
+            return (!back.activeSelf);
+        }
+        set
+        {
+            back.SetActive(!value);
+        }
+    }
+}
+
+	/*public bool faceUp {
 		get {
 			return (!back.activeSelf);
 		}
@@ -37,8 +49,7 @@ public class Card : MonoBehaviour {
 	void Update () {
 	
 	}
-    */
-} // class Card
+} // class Card */
 
 [System.Serializable]
 public class Decorator{
