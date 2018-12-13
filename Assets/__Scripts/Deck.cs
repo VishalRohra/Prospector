@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Deck : MonoBehaviour {
 
-[Header("Set in Inspector")]
+    /*
+    [Header("Set in Inspector")]
 	//Suits
 	public Sprite suitClub;
 	public Sprite suitDiamond;
@@ -23,11 +24,10 @@ public class Deck : MonoBehaviour {
 	// Prefabs
 	public GameObject prefabSprite;
 	public GameObject prefabCard;
+    */
 
 	[Header("Set Dynamically")]
-
 	public PT_XMLReader					xmlr;
-	// add from p 569
 	public List<string>					cardNames;
 	public List<Card>					cards;
 	public List<Decorator>				decorators;
@@ -35,11 +35,11 @@ public class Deck : MonoBehaviour {
 	public Transform					deckAnchor;
 	public Dictionary<string, Sprite>	dictSuits;
 
-
 	// called by Prospector when it is ready
 	public void InitDeck(string deckXMLText) {
 		// from page 576
-		if( GameObject.Find("_Deck") == null) {
+		/*
+        if( GameObject.Find("_Deck") == null) {
 			GameObject anchorGO = new GameObject("_Deck");
 			deckAnchor = anchorGO.transform;
 		}
@@ -51,30 +51,33 @@ public class Deck : MonoBehaviour {
 			{"H", suitHeart},
 			{"S", suitSpade}
 		};
+		*/
 		
 		
 		
 		// -------- end from page 576
 		ReadDeck (deckXMLText);
-		MakeCards();
+		/*
+		 * MakeCards();
+		 */
 	}
 
 
-	// ReadDeck parses the XML file passed to it into Card Definitions
-	public void ReadDeck(string deckXMLText)
-	{
-		xmlr = new PT_XMLReader ();
-		xmlr.Parse (deckXMLText);
+    // ReadDeck parses the XML file passed to it into Card Definitions
+    public void ReadDeck(string deckXMLText)
+    {
+        xmlr = new PT_XMLReader();
+        xmlr.Parse(deckXMLText);
 
-		// print a test line
-		string s = "xml[0] decorator [0] ";
-		s += "type=" + xmlr.xml ["xml"] [0] ["decorator"] [0].att ("type");
-		s += " x=" + xmlr.xml ["xml"] [0] ["decorator"] [0].att ("x");
-		s += " y=" + xmlr.xml ["xml"] [0] ["decorator"] [0].att ("y");
-		s += " scale=" + xmlr.xml ["xml"] [0] ["decorator"] [0].att ("scale");
-		print (s);
+        // print a test line
+        string s = "xml[0] decorator [0] ";
+        s += "type=" + xmlr.xml["xml"][0]["decorator"][0].att("type");
+        s += " x=" + xmlr.xml["xml"][0]["decorator"][0].att("x");
+        s += " y=" + xmlr.xml["xml"][0]["decorator"][0].att("y");
+        s += " scale=" + xmlr.xml["xml"][0]["decorator"][0].att("scale");
+        print(s);
 		
-		//Read decorators for all cards
+        //Read decorators for all cards
 		// these are the small numbers/suits in the corners
 		decorators = new List<Decorator>();
 		// grab all decorators from the XML file
@@ -128,6 +131,7 @@ public class Deck : MonoBehaviour {
 		} // for i < xCardDefs.Count
 	} // ReadDeck
 	
+    /*
 	public CardDefinition GetCardDefinitionByRank(int rnk) {
 		foreach(CardDefinition cd in cardDefs) {
 			if (cd.rank == rnk) {
@@ -282,7 +286,7 @@ public class Deck : MonoBehaviour {
 	 	//for ref paramters changes made in the function persist.
 
 
-	 }
+	 }*/
 
 
 } // Deck class
